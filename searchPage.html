@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Search Page</title>
+
+<head>
+    <script type="text/javascript" src="searchlist.js"></script>
+    <script type="text/javascript" src="searchreader.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body onload="printData()">
+    <a href="statusPage.html">Status Page</a><br><br>
+    <form>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name"><br>
+        <label for="food">Food: </label>
+        <input type="text" id="food" name="food"><br>
+        <label for="animal">Animal: </label>
+        <input type="text" id="animal" name="animal"><br>
+        <label for="color">Color: </label>
+        <input type="text" id="color" name="color"><br>
+
+        <input type="radio" id="printAll" name="funcType" value="printAll">
+        <label>Show All Data</label><br>
+        <input type="radio" id="search" name="funcType" value="search">
+        <label for="search">Search - select which field to search:</label>
+        <select name="searchSelect" id="searchSelect">
+            <option value="name">Name</option>
+            <option value="food">Food</option>
+            <option value="animal">Animal</option>
+            <option value="color">Color</option>
+        </select><br>
+        <input type="radio" id="create" name="funcType" value="create">
+        <label for="search">Create - will write a new entry using the entered data; Name must be filled in and unique but others can be blank</label><br>
+        <input type="radio" id="update" name="funcType" value="update">
+        <label for="search">Update - will update the entry in the Name field with any other data filled in; will not update blank fields</label><br>
+        <input type="radio" id="delete" name="funcType" value="delete">
+        <label for="search">Delete - will delete the entry in the Name field</label><br>
+
+        <input type="button" value="Enter" onclick="doTheThing()">
+    </form>
+
+    <p id="Errors"></p>
+    <p id="Output"></p>
+
+</body>
+
+</html>
